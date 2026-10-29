@@ -16,6 +16,8 @@ curl -F file=@image.jpg http://127.0.0.1:8000/v1/embeddings
 
 先按下文生成 `gpu_conv_native/model.param` 和 `model.bin`。完整说明见 [中文 API 文档](docs/API.zh-CN.md) / [English API guide](docs/API.md)。API 是全局特征服务，不是已通过验收的目标检测器。
 
+**[下载 0.2.0 ARM64 镜像](https://github.com/q1820926174-cpu/dinov3-snapdragon-855/releases/tag/v0.2.0)** · [真实容器验收](docs/SERVICE_VALIDATION.zh-CN.md)。855 上 GPU 单图 HTTP 平均 **159.49 ms**，四图批量 **6.42 图/秒**，四图对官方 FP32 的平均余弦 **0.999951677**。这与下方历史 RAW 单模型时间不同。
+
 在三星 S10 SCV41 的原生 Linux + Mesa Turnip 环境上，将同一套 **DINOv3 ConvNeXt-Tiny** 权重转换为更适合 Adreno 640 的 ncnn Vulkan 图，并实测特征精度、真实应用后端速度及系统能耗。
 
 This repository contains conversion code, native runners, the tested ncnn compatibility patch, and measurement records. It does **not** contain model weights, game images, Qualcomm SDKs, phone firmware, credentials, or a ready-made Android APK.

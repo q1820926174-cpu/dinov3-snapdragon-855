@@ -1,0 +1,129 @@
+{
+  "cpu": {
+    "health": {
+      "ready": true,
+      "backend": "cpu",
+      "runtime": "ncnn-cpu",
+      "allow_cpu_fallback": false,
+      "queue_depth": 0,
+      "queue_capacity": 8,
+      "active": false,
+      "completed_images": 0,
+      "dimensions": 768
+    },
+    "http_acceptance": "passed",
+    "benchmark": {
+      "1": {
+        "requests": 16,
+        "wall_seconds": 2.9597977149824146,
+        "requests_per_second": 5.40577483353286,
+        "latency_mean_ms": 183.43809600810346,
+        "latency_p95_ms": 194.42677925690077,
+        "native_mean_ms": 156.0625
+      },
+      "4": {
+        "requests": 16,
+        "wall_seconds": 3.231974963011453,
+        "requests_per_second": 4.950533399272283,
+        "latency_mean_ms": 730.7751634980377,
+        "latency_p95_ms": 826.6166322428035,
+        "native_mean_ms": 162.33056249999998
+      },
+      "batch4": {
+        "requests": 4,
+        "images": 16,
+        "wall_seconds": 3.173023737006588,
+        "images_per_second": 5.0425087632953876
+      }
+    },
+    "nonroot_no_privileged_readonly": true,
+    "vulkan_device_verified": null
+  },
+  "gpu16s": {
+    "health": {
+      "ready": true,
+      "backend": "gpu16s",
+      "runtime": "ncnn-vulkan",
+      "allow_cpu_fallback": false,
+      "queue_depth": 0,
+      "queue_capacity": 8,
+      "active": false,
+      "completed_images": 0,
+      "dimensions": 768
+    },
+    "http_acceptance": "passed",
+    "benchmark": {
+      "1": {
+        "requests": 16,
+        "wall_seconds": 2.575376855005743,
+        "requests_per_second": 6.212682997791529,
+        "latency_mean_ms": 159.4941977509734,
+        "latency_p95_ms": 170.20342500472907,
+        "native_mean_ms": 123.651125
+      },
+      "4": {
+        "requests": 16,
+        "wall_seconds": 2.5918970339989755,
+        "requests_per_second": 6.173084729108234,
+        "latency_mean_ms": 584.7052407534648,
+        "latency_p95_ms": 650.9014980038046,
+        "native_mean_ms": 122.9799375
+      },
+      "batch4": {
+        "requests": 4,
+        "images": 16,
+        "wall_seconds": 2.4914805779990274,
+        "images_per_second": 6.4218842969468435
+      }
+    },
+    "nonroot_no_privileged_readonly": true,
+    "vulkan_device_verified": "Turnip Adreno 640"
+  },
+  "gpu_without_device": {
+    "startup_failed": true,
+    "exit_code": 3
+  },
+  "image_id": "sha256:378240003f8d4bf1301c009e8d1dd614ce2b7d7aa59545d9ae0a9bc6264505d4",
+  "quality_against_official_fp32": {
+    "cpu": {
+      "n": 4,
+      "per_image_cosine": [
+        0.9999999999986124,
+        0.9999999999985816,
+        0.9999999999980609,
+        0.9999999999980582
+      ],
+      "mean_cosine": 0.9999999999983282,
+      "min_cosine": 0.9999999999980582
+    },
+    "gpu16s": {
+      "n": 4,
+      "per_image_cosine": [
+        0.9999581398856221,
+        0.9999521553535766,
+        0.999958437605727,
+        0.9999379750213595
+      ],
+      "mean_cosine": 0.9999516769665713,
+      "min_cosine": 0.9999379750213595
+    }
+  },
+  "reference_onnx_sha256": "372717c53f9b6c01e59b233b35d918d8b1bed971c33f93167915499a80d65656",
+  "architecture": "linux/arm64",
+  "version": "0.2.0",
+  "build_target": "service-prebuilt",
+  "notes": [
+    "Actual Docker containers on SCV41, real HTTP requests via phone USB interface address; client runs on phone",
+    "CPU and GPU load the same accepted optimized graph; historical CPU reference graph and RAW runner timings are different",
+    "16 single requests per concurrency level; four batch4 requests per backend; four images for quality",
+    "Single warm native worker; HTTP batching is sequential, not tensor batching; includes upload/decode/preprocessing/serialization",
+    "Dynamic clocks and short tests; no new power measurement; application localization is not tested by this embedding API"
+  ],
+  "compose_config_validation": "CPU, Adreno and parameterized DRM configs passed docker-compose config; DRM hardware not tested",
+  "ci": {
+    "source_build": "success",
+    "source_run": 40850232246,
+    "unit_tests": "success",
+    "unit_run": 40850232371
+  }
+}

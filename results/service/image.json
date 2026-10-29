@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "architecture": "linux/arm64",
+  "image_id": "sha256:378240003f8d4bf1301c009e8d1dd614ce2b7d7aa59545d9ae0a9bc6264505d4",
+  "archive": "dinov3-api-0.2.0-linux-arm64.tar.gz",
+  "sha256": "6524bff7dca5e0f2c8c53045845eb8935fe1183c775102e98b4db63c3f520f3f",
+  "bytes": 106087801,
+  "contains_weights": false,
+  "contains_api_key": false,
+  "build_target": "service-prebuilt"
+}

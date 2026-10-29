@@ -31,6 +31,8 @@ curl -F file=@image.jpg http://127.0.0.1:8000/v1/embeddings
 
 See **[English API/Docker guide](docs/API.md)** / **[中文 API/Docker 文档](docs/API.zh-CN.md)** for authentication, limits, driver passthrough, image architecture, prebuilt-binary packaging, error handling and benchmarking. The default listener is localhost. Generic `/dev/dri` Vulkan Compose is an unqualified example; native Linux/Turnip results do not establish Android compatibility.
 
+**[0.2.0 ARM64 image download](https://github.com/q1820926174-cpu/dinov3-snapdragon-855/releases/tag/v0.2.0)** · [Real-container qualification](docs/SERVICE_VALIDATION.md). On the 855: GPU mean single-image HTTP latency **159.49 ms**, batch4 **6.42 images/s**, four-image mean FP32-reference cosine **0.999951677**. These are actual API measurements, distinct from the historical RAW results below.
+
 ## Obtain and convert the model
 
 Accept the applicable conditions and obtain access on the [official model page](https://huggingface.co/facebook/dinov3-convnext-tiny-pretrain-lvd1689m). This repository does not distribute weights or grant rights to them.
