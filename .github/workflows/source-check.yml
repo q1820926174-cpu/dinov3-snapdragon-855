@@ -12,3 +12,7 @@ jobs:
         run: python scripts/check_publication.py
       - name: Check Python syntax
         run: python -m compileall -q -x '/(external|artifacts|build|project|__pycache__)/' .
+      - name: Install API test dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Test API protocol, limits, queueing and cancellation
+        run: python -m unittest discover -s tests -v

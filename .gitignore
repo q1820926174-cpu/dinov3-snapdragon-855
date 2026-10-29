@@ -13,6 +13,7 @@ six_fp32/
 /gpu_conv_native/
 /gpu_native/
 build*/
+.docker-build/
 ncnn-install/
 external/
 third_party/ncnn/

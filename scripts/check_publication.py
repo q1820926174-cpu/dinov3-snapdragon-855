@@ -16,6 +16,7 @@ patterns=[re.compile(r'gh[pousr]_[A-Za-z0-9]{30,}'),re.compile(r'hf_[A-Za-z0-9]{
 errors=[]
 for name in names:
     p=ROOT/name
+    if any(part in ('.private','.hf-auth') for part in p.parts):errors.append((name,'private directory'))
     if p.suffix.lower() in forbidden:errors.append((name,'forbidden artifact type'))
     if p.stat().st_size>2_000_000:errors.append((name,'unexpected large file'))
     text=p.read_text(encoding='utf-8',errors='replace')

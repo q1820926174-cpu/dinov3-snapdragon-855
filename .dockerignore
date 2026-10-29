@@ -1,0 +1,16 @@
+**
+!Dockerfile
+!requirements-service.txt
+!CMakeLists.txt
+!ncnn_embed_server.cpp
+!ncnn_runner.cpp
+!operator_bench.cpp
+!patches/
+!patches/ncnn-scv41.patch
+!service/
+!service/**
+!LICENSE
+!third_party/
+!third_party/ncnn-LICENSE.txt
+!.docker-build/
+!.docker-build/dinov3_embed_server

@@ -1,0 +1,14 @@
+# Native Linux + KGSL/Turnip only; not an Android or NVIDIA GPU configuration.
+services:
+  api:
+    environment:
+      DINO_BACKEND: gpu16s
+      VK_DRIVER_FILES: /opt/scv41-mesa-kgsl/share/vulkan/icd.d/freedreno_icd.armv8-a.json
+      LD_LIBRARY_PATH: /opt/scv41-mesa-kgsl/lib
+      XDG_RUNTIME_DIR: /tmp
+    devices:
+      - /dev/kgsl-3d0:/dev/kgsl-3d0
+    group_add:
+      - "${DINO_GPU_GID:-44}"
+    volumes:
+      - /opt/scv41-mesa-kgsl:/opt/scv41-mesa-kgsl:ro

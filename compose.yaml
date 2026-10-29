@@ -1,0 +1,25 @@
+services:
+  api:
+    image: dinov3-api:local
+    build:
+      context: .
+      target: service
+    ports:
+      - "${DINO_BIND_ADDRESS:-127.0.0.1}:${DINO_PORT:-8000}:8000"
+    environment:
+      DINO_BACKEND: cpu
+      DINO_MODEL_PATH: /models/model
+      DINO_NUM_THREADS: "${DINO_NUM_THREADS:-4}"
+      DINO_MAX_QUEUE: "${DINO_MAX_QUEUE:-8}"
+      DINO_API_KEY: "${DINO_API_KEY:-}"
+    volumes:
+      - "${DINO_MODEL_DIR:-./gpu_conv_native}:/models:ro"
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=268435456,mode=1777
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 2g
+    pids_limit: 128
+    restart: unless-stopped

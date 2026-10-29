@@ -1,0 +1,13 @@
+# Generic Linux DRM Vulkan example. Not hardware-qualified on every GPU/driver.
+services:
+  api:
+    environment:
+      DINO_BACKEND: gpu16s
+      VK_DRIVER_FILES: "${DINO_VK_ICD:?Set DINO_VK_ICD to a mounted ICD JSON path}"
+      XDG_RUNTIME_DIR: /tmp
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - "${DINO_GPU_GID:?Set the render device group ID}"
+    volumes:
+      - "${DINO_VK_DRIVER_DIR:?Set a compatible driver directory}:/opt/vulkan-driver:ro"

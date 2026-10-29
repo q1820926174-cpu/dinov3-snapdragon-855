@@ -15,7 +15,13 @@ int main(int argc,char** argv) {
     bool gpu=std::string(argv[2])=="gpu16s";
     if(!gpu && std::string(argv[2])!="cpu")return 65;
     ncnn::Net net;
-    net.opt.num_threads=4;
+    int threads=4;
+    if(const char* value=std::getenv("DINO_NUM_THREADS")) {
+        char* end=nullptr;long n=std::strtol(value,&end,10);
+        if(!end||*end||n<1||n>64)return 66;
+        threads=static_cast<int>(n);
+    }
+    net.opt.num_threads=threads;
     net.opt.use_vulkan_compute=gpu;
     net.opt.use_fp16_packed=gpu;
     net.opt.use_fp16_storage=gpu;
@@ -25,6 +31,9 @@ int main(int argc,char** argv) {
         setenv("SCV41_NCNN_STRICT_GPU","1",1);
         ncnn::create_gpu_instance();
         if(ncnn::get_gpu_count()<1)return 10;
+        // Do not label a software Vulkan driver as GPU acceleration.
+        if(ncnn::get_gpu_info(0).type()==3)return 14;
+        std::fprintf(stderr,"DINO_DEVICE backend=vulkan name=%s\n",ncnn::get_gpu_info(0).device_name());
         net.set_vulkan_device(0);
     }
     std::string prefix=argv[1];

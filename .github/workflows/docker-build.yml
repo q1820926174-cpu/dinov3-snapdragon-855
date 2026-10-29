@@ -1,0 +1,32 @@
+name: docker-source-build
+on:
+  push:
+    paths:
+      - Dockerfile
+      - requirements-service.txt
+      - CMakeLists.txt
+      - '*.cpp'
+      - patches/**
+      - service/**
+      - .github/workflows/docker-build.yml
+  pull_request:
+    paths:
+      - Dockerfile
+      - requirements-service.txt
+      - CMakeLists.txt
+      - '*.cpp'
+      - patches/**
+      - service/**
+      - .github/workflows/docker-build.yml
+jobs:
+  docker-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build complete source Docker target
+        run: docker build --target service --build-arg BUILD_JOBS=4 -t dinov3-api:ci .
+      - name: Check nonroot image and native executable
+        run: |
+          test "$(docker image inspect --format '{{.Config.User}}' dinov3-api:ci)" = "10001:10001"
+          docker run --rm dinov3-api:ci python -c 'from service.app import app; assert app.version == "0.2.0"'
+          docker run --rm dinov3-api:ci sh -c '/usr/local/bin/dinov3_embed_server /missing/model cpu; test "$?" = 11'
