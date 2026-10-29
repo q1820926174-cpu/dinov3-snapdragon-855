@@ -1,0 +1,73 @@
+{
+  "image_id": "sha256:cd5bf201b7c1bfb4af5f4f2bb0eec8eec0b15f4b5ed6d4f7bb7df1a2dedfe812",
+  "backend": "gpu16s",
+  "before": {
+    "160": {
+      "device": "/dev/dri/renderD128",
+      "fields": {
+        "drm-driver": "msm",
+        "drm-client-id": "160",
+        "drm-engine-gpu": "973066714 ns",
+        "drm-cycles-gpu": "664151888",
+        "drm-maxfreq-gpu": "710000000 Hz",
+        "drm-total-memory": "91256 KiB",
+        "drm-shared-memory": "0",
+        "drm-resident-memory": "91256 KiB"
+      }
+    }
+  },
+  "after": {
+    "160": {
+      "device": "/dev/dri/renderD128",
+      "fields": {
+        "drm-driver": "msm",
+        "drm-client-id": "160",
+        "drm-engine-gpu": "3591195612 ns",
+        "drm-cycles-gpu": "2433156403",
+        "drm-maxfreq-gpu": "710000000 Hz",
+        "drm-total-memory": "91256 KiB",
+        "drm-shared-memory": "0",
+        "drm-resident-memory": "91256 KiB"
+      }
+    }
+  },
+  "counter_deltas": {
+    "160:drm-engine-gpu": {
+      "before": "973066714 ns",
+      "after": "3591195612 ns",
+      "delta": 2618128898
+    },
+    "160:drm-cycles-gpu": {
+      "before": "664151888",
+      "after": "2433156403",
+      "delta": 1769004515
+    }
+  },
+  "requests": 16,
+  "elapsed_s": 4.047547457987093,
+  "native_mean_ms": 179.54075,
+  "gpu_log_present": true,
+  "cpu_fallback_log_present": false,
+  "note": "FD counters belong to the actual native child of the HTTP API, not the desktop compositor. Repeated client IDs are deduplicated. This is execution proof, not a GPU occupancy benchmark.",
+  "without_device": {
+    "exit_code": 3,
+    "startup_failed": true,
+    "log_excerpt": "INFO:     Started server process [1]\nINFO:     Waiting for application startup.\nno vulkan device\nERROR:    Traceback (most recent call last):\n  File \"/opt/venv/lib/python3.11/site-packages/starlette/routing.py\", line 694, in lifespan\n    async with self.lifespan_context(app) as maybe_state:\n  File \"/usr/lib/python3.11/contextlib.py\", line 204, in __aenter__\n    return await anext(self.gen)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/service/app.py\", line 46, in lifespan\n    await engine.start()\n  File \"/app/service/engine.py\", line 87, in start\n    header=await asyncio.wait_for(self.process.stdout.readexactly(4),self.settings.startup_timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.11/asyncio/tasks.py\", line 479, in wait_for\n    return fut.result()\n           ^^^^^^^^^^^^\n  File \"/usr/lib/python3.11/asyncio/streams.py\", line 726, in readexactly\n    raise exceptions.IncompleteReadError(incomplete, n)\nasyncio.exceptions.IncompleteReadError: 0 bytes read on a total of 4 expected bytes\n\nERROR:    Application startup failed. Exiting.\n"
+  },
+  "public_cli_validation": {
+    "requests": 4,
+    "positive_execution_counter": true,
+    "counter_deltas": {
+      "161:drm-engine-gpu": {
+        "before": "955524007 ns",
+        "after": "1607169317 ns",
+        "delta": 651645310
+      },
+      "161:drm-cycles-gpu": {
+        "before": "660949132",
+        "after": "1101813437",
+        "delta": 440864305
+      }
+    }
+  }
+}

@@ -36,6 +36,14 @@ Four API outputs against official FP32: GPU mean cosine **0.999952**, minimum **
 
 Temporary test containers and their test credentials were removed. The 855 production API was not modified. No permanent 845 service was left running by this test.
 
+### Direct GPU execution evidence
+
+An additional same-image API run inspected `/proc/<native-child>/fdinfo`, selecting the actual `dinov3_embed_server` child rather than the compositor. Its MSM render FD was `/dev/dri/renderD128`. After warmup, 16 real API requests increased that DRM client's `drm-engine-gpu` from **973,066,714 ns** to **3,591,195,612 ns**: **+2.618128898 seconds of GPU execution**. `drm-cycles-gpu` increased by **1,769,004,515 cycles**. Client IDs were deduplicated.
+
+Using the exact same image, ICD and model **without render-device passthrough** produced `no vulkan device` and startup exit **3**; it did not continue on CPU. The actual GPU-device log and absence of a CPU-fallback marker were retained. Thus the Docker GPU run performed real GPU work; a slower HTTP result does not imply no GPU usage. Decode, upload/download, synchronization and service work still contribute to latency; their individual contributions were not fully profiled.
+
+See `results/snapdragon845/gpu-execution-proof.json`. This is a separate execution-proof run using a simple HTTP client, not a replacement throughput benchmark or a whole-GPU utilization percentage. Reproduce process-counter evidence on supported DRM kernels with `scripts/verify_drm_gpu.py` (host `/proc` and Docker permissions required; `DINO_API_KEY` is read from environment). Missing counters make that script exit 2, not prove CPU execution. This DRM method does not apply to the 855 KGSL interface.
+
 ## Reproduce the DRM container layer
 
 Build the repository API base or load the public v0.2.0 ARM64 image first, then:
