@@ -1,5 +1,6 @@
 **
 !Dockerfile
+!Dockerfile.mesa
 !requirements-service.txt
 !CMakeLists.txt
 !ncnn_embed_server.cpp

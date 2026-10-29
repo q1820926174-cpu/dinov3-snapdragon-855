@@ -1,4 +1,4 @@
-# DINOv3 on Snapdragon 855 / Adreno 640
+# DINOv3 on Snapdragon 855 & 845 / Adreno 640 & 630
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -49,6 +49,8 @@ python export_gpu_conv_native.py --model models/dinov3-convnext-tiny --out gpu_c
 Outputs: `gpu_conv_native/model.param` and `model.bin`. Weights remain FP32 on disk; packed half storage is a runtime option. The converter checks rewritten PyTorch / official FP32 / TorchScript parity; physical-device validation is still required.
 
 ## Measured conversion result
+
+**Snapdragon 845 / OnePlus 6 also tested:** native Adreno 630 **147.27 ms / 6.79 FPS**, CPU **206.07 ms**; 48-image mean GPU cosine **0.999946**. The DRM Docker compatibility layer also passed, but its packaged Mesa stack made single-image GPU HTTP slightly slower than CPU. See the [845 report](docs/SNAPDRAGON845.md) before selecting a deployment path.
 
 Same official weights, no retraining or smaller replacement model. Native LayerNorm/GELU plus 1×1 Conv MLP reduces the graph to **188 nodes, zero Gemm**. The Vulkan GELU implementation uses a tanh approximation.
 

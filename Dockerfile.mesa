@@ -1,0 +1,8 @@
+# Optional self-contained open-source DRM driver layer, e.g. Adreno 630/MSM.
+# Build/load the matching-architecture base image first. No host driver copying.
+ARG BASE_IMAGE=dinov3-api:local
+FROM ${BASE_IMAGE} AS service
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends mesa-vulkan-drivers \
+    && rm -rf /var/lib/apt/lists/*
+USER 10001:10001

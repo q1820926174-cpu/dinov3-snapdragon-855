@@ -1,0 +1,23 @@
+name: mesa-drm-image
+on:
+  push:
+    branches: [main]
+    paths: [Dockerfile.mesa, compose.mesa.yaml, .github/workflows/mesa-image.yml]
+  pull_request:
+    paths: [Dockerfile.mesa, compose.mesa.yaml, .github/workflows/mesa-image.yml]
+jobs:
+  mesa-layer:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@v4
+      - name: Load the fixed publicly released ARM64 API base
+        run: |
+          curl -fL --retry 3 -O https://github.com/q1820926174-cpu/dinov3-snapdragon-855/releases/download/v0.2.0/dinov3-api-0.2.0-linux-arm64.tar.gz
+          curl -fL --retry 3 -O https://github.com/q1820926174-cpu/dinov3-snapdragon-855/releases/download/v0.2.0/dinov3-api-0.2.0-linux-arm64.tar.gz.sha256
+          sha256sum -c dinov3-api-0.2.0-linux-arm64.tar.gz.sha256
+          gzip -dc dinov3-api-0.2.0-linux-arm64.tar.gz | docker load
+      - name: Build and check the self-contained DRM userspace layer
+        run: |
+          docker build -f Dockerfile.mesa --build-arg BASE_IMAGE=dinov3-api:0.2.0-arm64 -t dinov3-api:mesa-ci .
+          docker run --rm dinov3-api:mesa-ci python -c 'from service.app import app; import pathlib; assert pathlib.Path("/usr/share/vulkan/icd.d/freedreno_icd.aarch64.json").exists()'
+          test "$(docker image inspect --format '{{.Config.User}}' dinov3-api:mesa-ci)" = "10001:10001"

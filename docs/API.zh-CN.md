@@ -45,6 +45,8 @@ docker compose -f compose.yaml -f compose.adreno.yaml up -d --build
 
 `compose.vulkan.yaml` 是**尚未逐硬件验收的 DRM 示例**。配置 `DINO_GPU_GID`、`DINO_VK_DRIVER_DIR`、`DINO_VK_ICD`；ICD 路径须是容器内路径，JSON 内库路径及依赖也必须与镜像兼容。它不安装主机驱动，不保证任意 GPU 可用，也不是 Android APK。
 
+**一加 6 / 骁龙 845 的 DRM 路径已单独测试**，使用 `Dockerfile.mesa` 和 `compose.mesa.yaml`。此层只在容器内安装开源 Mesa，避免主机驱动和 glibc 不匹配；`DINO_GPU_GID` 设置为 renderD128 的数字组号。详见 [845 报告与限制](SNAPDRAGON845.zh-CN.md)。当前 Mesa 22.3 兼容镜像的单图 GPU HTTP 略慢于 CPU，不应套用主机原生测速宣传。
+
 ## 调用示例
 
 ```bash

@@ -1,4 +1,4 @@
-# DINOv3 on Snapdragon 855 / Adreno 640
+# DINOv3 on Snapdragon 855 & 845 / Adreno 640 & 630
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -23,6 +23,8 @@ curl -F file=@image.jpg http://127.0.0.1:8000/v1/embeddings
 This repository contains conversion code, native runners, the tested ncnn compatibility patch, and measurement records. It does **not** contain model weights, game images, Qualcomm SDKs, phone firmware, credentials, or a ready-made Android APK.
 
 ## 实测结果
+
+**已增加一加 6 / 骁龙 845 实测：**Adreno 630 原生 **147.27 ms / 6.79 FPS**，CPU **206.07 ms**；48 图 GPU 平均余弦 **0.999946**。DRM Docker 兼容层也通过，但该镜像的软件栈中单图 GPU HTTP 略慢于 CPU，选型前请看 [845 中文报告](docs/SNAPDRAGON845.zh-CN.md)。
 
 ### 单次模型推理，224×224
 

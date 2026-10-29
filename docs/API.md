@@ -45,6 +45,8 @@ This maps `/dev/kgsl-3d0`, adds its numeric group, and mounts the existing compa
 
 `compose.vulkan.yaml` is an **unqualified generic DRM example** for `/dev/dri`. Set `DINO_GPU_GID`, `DINO_VK_DRIVER_DIR` and `DINO_VK_ICD` (a path inside the mounted container tree); the ICD's library paths and dependencies must be valid in the image. It does not install host drivers or guarantee compatibility with every GPU. Native Linux/Turnip qualification is not an Android APK claim.
 
+For the separately tested **OnePlus 6 / Snapdragon 845 DRM path**, use `Dockerfile.mesa` and `compose.mesa.yaml`. This optional layer installs open-source Mesa packages inside the container, avoiding a host-driver/glibc mismatch. Set `DINO_GPU_GID` to the numeric group of `/dev/dri/renderD128`; see [845 results and limitations](SNAPDRAGON845.md). The tested Mesa 22.3 compatibility image has slightly worse single-image GPU HTTP latency than CPU; it must not be advertised using native-host timing.
+
 ## Request examples
 
 ```bash

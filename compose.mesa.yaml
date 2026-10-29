@@ -1,0 +1,16 @@
+# Overlay for native Linux DRM; the Adreno 630 example uses packaged Mesa.
+services:
+  api:
+    image: dinov3-api:mesa
+    build:
+      dockerfile: Dockerfile.mesa
+      args:
+        BASE_IMAGE: "${DINO_BASE_IMAGE:-dinov3-api:local}"
+    environment:
+      DINO_BACKEND: gpu16s
+      VK_DRIVER_FILES: "${DINO_VK_ICD:-/usr/share/vulkan/icd.d/freedreno_icd.aarch64.json}"
+      XDG_RUNTIME_DIR: /tmp
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+    group_add:
+      - "${DINO_GPU_GID:?Set the renderD128 numeric group ID}"

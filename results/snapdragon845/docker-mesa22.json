@@ -1,0 +1,103 @@
+{
+  "cpu": {
+    "backend": "cpu",
+    "health": {
+      "ready": true,
+      "backend": "cpu",
+      "runtime": "ncnn-cpu",
+      "allow_cpu_fallback": false,
+      "queue_depth": 0,
+      "queue_capacity": 8,
+      "active": false,
+      "completed_images": 0,
+      "dimensions": 768
+    },
+    "metrics": {
+      "1": {
+        "n": 16,
+        "latency_mean_ms": 232.31447137459327,
+        "latency_p95_ms": 242.64239575131796,
+        "native_mean_ms": 196.46425000000002,
+        "images_per_second": 4.297807605269749
+      },
+      "4": {
+        "n": 16,
+        "latency_mean_ms": 954.3139700626853,
+        "latency_p95_ms": 1058.5821402564761,
+        "native_mean_ms": 194.8626875,
+        "images_per_second": 3.7859809107874027
+      },
+      "batch4": {
+        "requests": 4,
+        "images": 16,
+        "images_per_second": 4.0050107781239594
+      }
+    },
+    "quality": {
+      "n": 4,
+      "mean_cosine": 0.9999999999983282,
+      "min_cosine": 0.9999999999980582,
+      "per_image_cosine": [
+        0.9999999999986124,
+        0.9999999999985816,
+        0.9999999999980609,
+        0.9999999999980582
+      ]
+    }
+  },
+  "gpu16s": {
+    "backend": "gpu16s",
+    "health": {
+      "ready": true,
+      "backend": "gpu16s",
+      "runtime": "ncnn-vulkan",
+      "allow_cpu_fallback": false,
+      "queue_depth": 0,
+      "queue_capacity": 8,
+      "active": false,
+      "completed_images": 0,
+      "dimensions": 768
+    },
+    "metrics": {
+      "1": {
+        "n": 16,
+        "latency_mean_ms": 246.01344081293064,
+        "latency_p95_ms": 278.5770339978626,
+        "native_mean_ms": 176.9478125,
+        "images_per_second": 4.055693131958308
+      },
+      "4": {
+        "n": 16,
+        "latency_mean_ms": 940.5395259391298,
+        "latency_p95_ms": 1054.3438392523967,
+        "native_mean_ms": 181.015375,
+        "images_per_second": 3.868740388604805
+      },
+      "batch4": {
+        "requests": 4,
+        "images": 16,
+        "images_per_second": 4.293388757227029
+      }
+    },
+    "quality": {
+      "n": 4,
+      "mean_cosine": 0.9999520286853028,
+      "min_cosine": 0.9999428076423873,
+      "per_image_cosine": [
+        0.9999578112252479,
+        0.9999520439861588,
+        0.9999554518874172,
+        0.9999428076423873
+      ]
+    }
+  },
+  "metadata": {
+    "image_id": "sha256:cd5bf201b7c1bfb4af5f4f2bb0eec8eec0b15f4b5ed6d4f7bb7df1a2dedfe812",
+    "container_mesa": "mesa-vulkan-drivers:arm64\t22.3.6-1+deb12u2",
+    "model_readonly": true,
+    "privileged": false,
+    "server_user": "10001:10001",
+    "temporary_containers_removed": true,
+    "client": "Python 3.11 + HTTPX 0.28.1 in an isolated container, host network to Docker published port"
+  }
+}

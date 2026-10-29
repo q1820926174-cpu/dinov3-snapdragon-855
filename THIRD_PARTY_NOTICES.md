@@ -5,5 +5,6 @@
 - **OmniMatch CV**, https://github.com/drtiwari/OmniMatch_CV , measured commit `bc410f1a410abc7d983278ddeb53b44850276b5d`. Its README declares MIT. Its source is fetched by the user rather than vendored; our adapter retains the original pipeline and API, replacing only its feature provider and local configuration.
 - **Game screenshots / annotations**: public sample metadata comes from https://github.com/pan0624/Yolov8-target-detection-and-simulation-click at `a6e1d91bc4cb632351f1c35a8e104156cbc3de13` and other sources identified by the acquisition scripts. No game image, video or crop is included. Availability on a public repository does not grant blanket rights to commercial game artwork.
 - **Qualcomm SNPE / SDK / firmware and Mesa driver binaries** are not distributed. Users must obtain and configure their own compatible platform dependencies.
+- The optional **`Dockerfile.mesa` DRM layer** fetches Debian's open-source Mesa packages at build time; it does not copy host libraries, proprietary drivers or firmware. Those packages retain their own licenses and notices. The public v0.2.0 base-image archive does not include this optional layer.
 
 See `results/` for measured outputs, not reusable training data. This repository's license covers its original code and documentation only, subject to the notices above.
