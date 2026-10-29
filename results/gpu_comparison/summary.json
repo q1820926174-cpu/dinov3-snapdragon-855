@@ -1,0 +1,133 @@
+{
+  "inputs_verified_identical": true,
+  "runs": [
+    {
+      "name": "cpu_quality",
+      "backend": "cpu",
+      "exit": 0,
+      "process_wall_seconds": 9.824000001011882,
+      "n": 48,
+      "mean_ms": 190.47589441666665,
+      "p50_ms": 192.1617355,
+      "p95_ms": 200.49374725,
+      "fps_inference_only": 5.250008160153309,
+      "quality": {
+        "n": 48,
+        "global_mean_cosine": 0.9999865889549255,
+        "global_p05_cosine": 0.9999775886535645,
+        "global_min_cosine": 0.9999698400497437,
+        "dense_mean_cosine": 0.9999719858169556,
+        "dense_p05_cosine": 0.9999397993087769,
+        "same_image_patch_position_recall": 1.0,
+        "passes_global_gate": true
+      }
+    },
+    {
+      "name": "gpu16s_quality",
+      "backend": "gpu16s",
+      "exit": 0,
+      "process_wall_seconds": 12.104390085994964,
+      "n": 48,
+      "mean_ms": 226.68344845833334,
+      "p50_ms": 226.219388,
+      "p95_ms": 229.42665745,
+      "fps_inference_only": 4.411438094845332,
+      "quality": {
+        "n": 48,
+        "global_mean_cosine": 0.9998445510864258,
+        "global_p05_cosine": 0.9996871948242188,
+        "global_min_cosine": 0.9995144605636597,
+        "dense_mean_cosine": 0.9996833205223083,
+        "dense_p05_cosine": 0.9992831945419312,
+        "same_image_patch_position_recall": 1.0,
+        "passes_global_gate": true
+      }
+    },
+    {
+      "name": "gpu_half_quality",
+      "backend": "gpu",
+      "exit": 0,
+      "process_wall_seconds": 11.400278110988438,
+      "n": 48,
+      "mean_ms": 212.63001047916669,
+      "p50_ms": 212.57285000000002,
+      "p95_ms": 213.831777,
+      "fps_inference_only": 4.703004988554892,
+      "quality": {
+        "n": 48,
+        "global_mean_cosine": 0.9680576324462891,
+        "global_p05_cosine": 0.9107603430747986,
+        "global_min_cosine": 0.8876469135284424,
+        "dense_mean_cosine": 0.9387000203132629,
+        "dense_p05_cosine": 0.8367478251457214,
+        "same_image_patch_position_recall": 0.9872448979591837,
+        "passes_global_gate": false
+      }
+    },
+    {
+      "name": "gpu32_quality",
+      "backend": "gpu32",
+      "exit": 0,
+      "process_wall_seconds": 40.63984970599995,
+      "n": 48,
+      "mean_ms": 784.5368880208334,
+      "p50_ms": 784.305808,
+      "p95_ms": 788.73948375,
+      "fps_inference_only": 1.2746373246039706,
+      "quality": {
+        "n": 48,
+        "global_mean_cosine": 0.999986469745636,
+        "global_p05_cosine": 0.9999774694442749,
+        "global_min_cosine": 0.9999698996543884,
+        "dense_mean_cosine": 0.9999719858169556,
+        "dense_p05_cosine": 0.9999399781227112,
+        "same_image_patch_position_recall": 1.0,
+        "passes_global_gate": true
+      }
+    },
+    {
+      "name": "cpu_bench",
+      "backend": "cpu",
+      "exit": 0,
+      "process_wall_seconds": 8.007129022997105,
+      "n": 36,
+      "mean_ms": 201.74268919444444,
+      "p50_ms": 203.1624365,
+      "p95_ms": 208.943853,
+      "fps_inference_only": 4.9568091116113555
+    },
+    {
+      "name": "gpu16s_bench",
+      "backend": "gpu16s",
+      "exit": 0,
+      "process_wall_seconds": 9.391495028015925,
+      "n": 36,
+      "mean_ms": 226.08735305555558,
+      "p50_ms": 226.0574745,
+      "p95_ms": 227.39831974999998,
+      "fps_inference_only": 4.423069165457804
+    },
+    {
+      "name": "gpu32_bench",
+      "backend": "gpu32",
+      "exit": 0,
+      "process_wall_seconds": 33.45306883798912,
+      "n": 36,
+      "mean_ms": 843.2268994166667,
+      "p50_ms": 843.698817,
+      "p95_ms": 847.86222975,
+      "fps_inference_only": 1.1859204215280452
+    },
+    {
+      "name": "cpu_bench_repeat",
+      "backend": "cpu",
+      "exit": 0,
+      "process_wall_seconds": 8.120995646022493,
+      "n": 36,
+      "mean_ms": 204.22989552777778,
+      "p50_ms": 205.6728755,
+      "p95_ms": 211.56446599999998,
+      "fps_inference_only": 4.896442792646817
+    }
+  ]
+}

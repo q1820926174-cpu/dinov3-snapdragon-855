@@ -1,0 +1,29 @@
+{
+  "measurement": "MAX77705 ISYS mA via battery/power_now, VSYS mV via read-only fg_data 0xB1; W=ISYS*VSYS/1e6",
+  "basis": "Existing audited phone tooling: scv41-linux/tools/hybrid-power-run.py",
+  "sample_hz": 2,
+  "vsys_refresh_seconds": 5,
+  "charging_policy_changed": false,
+  "charging_before": {
+    "status": "Full",
+    "batt_slate_mode": "0",
+    "capacity": "100"
+  },
+  "files_sha256": {
+    "power_worker.py": "cf3f14dc93914aebb721d6e81167668b147807e267cd1a3188a0ef3b5c050f95",
+    "power_app_adapter.py": "b4e6a895c4185d161ff2055453f843e5ae9b2b8c0775e3d5076cb54cd723800c",
+    "api.py": "da52ec5f3b792aa1ab14b68221e5dc1bc7d3cedc16f135c84a6c6e8d7b08afbf",
+    "pipeline.py": "6a4edbaa541d16a28b0732c911c8eb1b703b7ad95695809cad93535550f491a2",
+    "dinov3_embed_server": "c6a144b30c5ad76fea02290ec1e16a64ba9f682d9dc4df3a1a2017fd3b722629",
+    "dinov3_conv_native.bin": "80aa5b062674a03f3c4779ef86fb06631ef8ec8ff7162b0d8de6e82c7f07c269",
+    "dinov3_gpu_adaptive.bin": "b0bdc15ffe3867bd416619561ffe98937bdc9cc883caddd55c9cfb82cd91fd51"
+  },
+  "exit": 0,
+  "charging_after": {
+    "status": "Full",
+    "batt_slate_mode": "0",
+    "capacity": "100"
+  },
+  "screen_off_before": true,
+  "screen_off_after": true
+}

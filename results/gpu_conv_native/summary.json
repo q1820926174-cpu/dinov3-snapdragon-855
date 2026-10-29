@@ -1,0 +1,107 @@
+{
+  "timings": {
+    "optimized": {
+      "n": 36,
+      "mean_ms": 121.57602541666668,
+      "p50_ms": 121.344705,
+      "p95_ms": 122.874269,
+      "fps_inference_only": 8.225305906923582
+    },
+    "previous_gpu": {
+      "n": 36,
+      "mean_ms": 226.4010106111111,
+      "p50_ms": 226.41941,
+      "p95_ms": 228.0239105,
+      "fps_inference_only": 4.416941414266474
+    },
+    "previous_cpu": {
+      "n": 36,
+      "mean_ms": 185.0518078888889,
+      "p50_ms": 187.5154585,
+      "p95_ms": 194.52063725,
+      "fps_inference_only": 5.403892085185314
+    },
+    "quality_gpu": {
+      "n": 48,
+      "mean_ms": 121.60938483333332,
+      "p50_ms": 121.79087,
+      "p95_ms": 122.6995554,
+      "fps_inference_only": 8.223049572781807
+    },
+    "half_quality_gpu": {
+      "n": 48,
+      "mean_ms": 112.44721379166667,
+      "p50_ms": 112.28545349999999,
+      "p95_ms": 113.5485546,
+      "fps_inference_only": 8.893061608913861
+    }
+  },
+  "feature_quality": {
+    "n": 48,
+    "global_mean_cosine": 0.9999461770057678,
+    "global_p05_cosine": 0.9998923540115356,
+    "global_min_cosine": 0.9998600482940674,
+    "dense_mean_cosine": 0.9998993873596191,
+    "dense_p05_cosine": 0.999747633934021,
+    "same_image_patch_position_recall": 1.0,
+    "passes_global_gate": true
+  },
+  "half_arithmetic_quality": {
+    "n": 48,
+    "global_mean_cosine": 0.9679657816886902,
+    "global_p05_cosine": 0.9084154963493347,
+    "global_min_cosine": 0.8897486925125122,
+    "dense_mean_cosine": 0.938875675201416,
+    "dense_p05_cosine": 0.836074709892273,
+    "same_image_patch_position_recall": 0.9868197278911565,
+    "passes_global_gate": false
+  },
+  "operators": {
+    "Input": 1,
+    "Convolution": 40,
+    "Permute": 48,
+    "LayerNorm": 24,
+    "Split": 19,
+    "ConvolutionDepthWise": 18,
+    "GELU": 18,
+    "BinaryOp": 18,
+    "Reduction": 1,
+    "Flatten": 1
+  },
+  "node_count": 188,
+  "gpu_speedup": 1.8622175699130408,
+  "latency_reduction": 0.4630058183552115,
+  "gpu_cpu_speedup": 1.522107728515366,
+  "precision": "FP16 packed storage, FP32 math; weights serialized FP32",
+  "cpu_fallback": false,
+  "npu_execution": false,
+  "warmup_per_process": 3,
+  "benchmark_indices": [
+    0,
+    1,
+    8,
+    9,
+    16,
+    17,
+    24,
+    25,
+    32,
+    33,
+    40,
+    41
+  ],
+  "repeats": 3,
+  "limitations": [
+    "Dynamic clocks, no power or long thermal test",
+    "CPU benchmark drifts from 166 to 195 ms; not a fixed-clock comparison",
+    "Timing excludes loading, warmup, raw IO and NHWC conversion",
+    "Same 48 engineering test images used before; not unseen final validation",
+    "Feature preservation is not detection mAP or labeled matching recall"
+  ],
+  "sha256": {
+    "gpu_conv_native\\model.param": "d7d7efeba8b0e1f4a4b6829439cf4fd80708cc7e9dc87443d35a7f5b39a0db89",
+    "gpu_conv_native\\model.bin": "80aa5b062674a03f3c4779ef86fb06631ef8ec8ff7162b0d8de6e82c7f07c269",
+    "export_gpu_conv_native.py": "38f8fc83ac658321338866754f8db95403813e5474fa4fb222718c7dca830246",
+    "phone_ncnn_probe.py": "7ce67f0273f7c05c1e239aadcc495285cf6afbfeae9826296eebece2f87412d4"
+  }
+}

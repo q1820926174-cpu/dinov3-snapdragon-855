@@ -1,0 +1,87 @@
+{
+  "project": "https://github.com/drtiwari/OmniMatch_CV",
+  "commit": "bc410f1a410abc7d983278ddeb53b44850276b5d",
+  "backends": {
+    "gpu16s": {
+      "cases": 4,
+      "windows_total": 480,
+      "mean_api_ms": 14793.740914254158,
+      "per_case_api_ms": [
+        14814.59764202009,
+        14790.852162986994,
+        14783.753517986042,
+        14785.760334023507
+      ],
+      "mean_window_encoder_ms": 120.77048982083333,
+      "tp_iou50": 0,
+      "fp_iou50": 16,
+      "fn_iou50": 4,
+      "precision_iou50": 0.0,
+      "recall_iou50": 0.0,
+      "target_count": 4,
+      "targets_with_prediction_center_inside": 2,
+      "negative_case_false_detections": 4
+    },
+    "cpu": {
+      "cases": 4,
+      "windows_total": 480,
+      "mean_api_ms": 26748.911149494234,
+      "per_case_api_ms": [
+        26017.532587982714,
+        26717.99374598777,
+        27033.843527984573,
+        27226.27473602188
+      ],
+      "mean_window_encoder_ms": 221.02841367916673,
+      "tp_iou50": 0,
+      "fp_iou50": 16,
+      "fn_iou50": 4,
+      "precision_iou50": 0.0,
+      "recall_iou50": 0.0,
+      "target_count": 4,
+      "targets_with_prediction_center_inside": 2,
+      "negative_case_false_detections": 4
+    }
+  },
+  "case_comparison": [
+    {
+      "case_id": 0,
+      "same_box_set": true,
+      "cpu_detections": 3,
+      "gpu_detections": 3,
+      "max_common_score_abs_delta": 0.0020999999999999908
+    },
+    {
+      "case_id": 1,
+      "same_box_set": true,
+      "cpu_detections": 4,
+      "gpu_detections": 4,
+      "max_common_score_abs_delta": 0.0010999999999999899
+    },
+    {
+      "case_id": 2,
+      "same_box_set": true,
+      "cpu_detections": 5,
+      "gpu_detections": 5,
+      "max_common_score_abs_delta": 0.0016000000000000458
+    },
+    {
+      "case_id": 3,
+      "same_box_set": true,
+      "cpu_detections": 4,
+      "gpu_detections": 4,
+      "max_common_score_abs_delta": 0.0020000000000000018
+    }
+  ],
+  "gpu_speedup": 1.8081235371454258,
+  "all_case_boxes_equal": true,
+  "scope": "Actual upstream FastAPI /detect with TestClient on the phone; GUI, live capture and TCP network transport not tested. CPU uses FP32 ncnn reference graph; GPU uses accepted optimized graph with FP16 packed storage/FP32 math.",
+  "limitations": [
+    "Four cases, four labeled targets; not a statistically reliable dataset result",
+    "Target dataset class 0 (see template and original annotations); not a six-game detection evaluation",
+    "Same fixed CPU gallery for both; no threshold tuning on cases",
+    "Window size 64 and threshold .78 retained; stride changed from 16 to 64 and batch size from 512 to 1 for this mobile test; last partial image columns are not scanned",
+    "Disjoint source filenames from prior calibration/evaluation; no source-video independence evidence",
+    "App changed from upstream ViT-B to the user requested ConvNeXt-Tiny and explicit RGB normalization"
+  ]
+}

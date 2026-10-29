@@ -1,0 +1,14 @@
+name: source-check
+on: [push, pull_request]
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check source and evidence publication boundaries
+        run: python scripts/check_publication.py
+      - name: Check Python syntax
+        run: python -m compileall -q -x '/(external|artifacts|build|project|__pycache__)/' .

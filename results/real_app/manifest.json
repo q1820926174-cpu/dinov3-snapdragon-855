@@ -1,0 +1,187 @@
+{
+  "project": "https://github.com/drtiwari/OmniMatch_CV",
+  "commit": "bc410f1a410abc7d983278ddeb53b44850276b5d",
+  "target_class_id": 0,
+  "gallery": [
+    {
+      "file": "gallery/reference_0.png",
+      "source": "datasets_raw/pvz/github/train/images/00041.jpg",
+      "box": [
+        420,
+        64,
+        483,
+        127
+      ],
+      "sha256": "1ef2d9eec49618d8eac689f862b3d62069187a75219b5a4cb0e4ea43cbd50f66"
+    },
+    {
+      "file": "gallery/reference_1.png",
+      "source": "datasets_raw/pvz/github/train/images/00051.jpg",
+      "box": [
+        427,
+        480,
+        471,
+        524
+      ],
+      "sha256": "0390f0af7206105a085e6447647b5a5a4d2e5742e21f7f0b382c314dddab04a8"
+    },
+    {
+      "file": "gallery/reference_2.png",
+      "source": "datasets_raw/pvz/github/train/images/01361.jpg",
+      "box": [
+        504,
+        181,
+        550,
+        226
+      ],
+      "sha256": "af854e2f8c9fd24a10fedd7ad8375c4e57e535157b9266f9e67316697681d76a"
+    }
+  ],
+  "cases": [
+    {
+      "id": 0,
+      "file": "cases/case_0.jpg",
+      "source": "datasets_raw/pvz/github/val/images/00061.jpg",
+      "sha256": "5235f2edebf74e9e908824d06b0329c24353d94037df45f964c299caabb2a320",
+      "size": [
+        806,
+        640
+      ],
+      "objects": [
+        {
+          "class_id": 0,
+          "box": [
+            408.999864,
+            489.00000000000006,
+            449.00003200000003,
+            526.00032
+          ]
+        }
+      ],
+      "target_boxes": [
+        [
+          408.999864,
+          489.00000000000006,
+          449.00003200000003,
+          526.00032
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "file": "cases/case_1.jpg",
+      "source": "datasets_raw/pvz/github/val/images/01651.jpg",
+      "sha256": "b1759c2cee1db2ade09e192c50465ad1ef20087f1445d05e925b458a912b7f40",
+      "size": [
+        806,
+        640
+      ],
+      "objects": [
+        {
+          "class_id": 0,
+          "box": [
+            598.000013,
+            210.0,
+            639.999867,
+            250.0
+          ]
+        }
+      ],
+      "target_boxes": [
+        [
+          598.000013,
+          210.0,
+          639.999867,
+          250.0
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "file": "cases/case_2.jpg",
+      "source": "datasets_raw/pvz/github/val/images/01751.jpg",
+      "sha256": "401acd3318d6b80a51bcb5d3e286be603aa0281cb8c30c7b84e3a4681ab2b1b9",
+      "size": [
+        806,
+        640
+      ],
+      "objects": [
+        {
+          "class_id": 0,
+          "box": [
+            591.000306,
+            87.0,
+            631.999914,
+            133.0
+          ]
+        },
+        {
+          "class_id": 0,
+          "box": [
+            431.99988,
+            385.0,
+            472.000048,
+            427.0
+          ]
+        }
+      ],
+      "target_boxes": [
+        [
+          591.000306,
+          87.0,
+          631.999914,
+          133.0
+        ],
+        [
+          431.99988,
+          385.0,
+          472.000048,
+          427.0
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "file": "cases/case_3.jpg",
+      "source": "datasets_raw/pvz/github/val/images/01591.jpg",
+      "sha256": "e28c09103a985645c0e54d94430f3109883021d02ebc420048edb6643b4f4c03",
+      "size": [
+        806,
+        640
+      ],
+      "objects": [
+        {
+          "class_id": 2,
+          "box": [
+            428.00010499999996,
+            61.00000000000001,
+            472.000451,
+            127.0
+          ]
+        }
+      ],
+      "target_boxes": []
+    }
+  ],
+  "config": {
+    "model": {
+      "name": "local/dinov3-convnext-tiny",
+      "cache_dir": "unused",
+      "batch_size": 1
+    },
+    "detection": {
+      "size": 64,
+      "stride": 64,
+      "threshold": 0.78,
+      "use_nms": true,
+      "iou_threshold": 0.3
+    },
+    "paths": {
+      "train_dir": "../gallery",
+      "index_dir": "../index",
+      "result_dir": "../results"
+    }
+  },
+  "selection": "First three unused train images with class 0; first three unused positive val images and first unused negative val image. No threshold tuning.",
+  "limits": "Disjoint original filenames from previous 192 images; source video identity unavailable; same source dataset. Only four application cases."
+}

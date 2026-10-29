@@ -1,0 +1,171 @@
+{
+  "backends": {
+    "gpu16s": {
+      "runs": 2,
+      "screenshots": 2,
+      "windows": 240,
+      "mean_system_w": 3.621542575703702,
+      "mean_duration_s": 14.814816725498531,
+      "gross_j_per_screenshot": 53.65248952264023,
+      "incremental_j_per_screenshot": 40.13285980903153,
+      "mean_loaded_idle_w": 0.912574887972754,
+      "battery_temp_max_c": 38.1,
+      "run_mean_w_range": [
+        3.4934053514099013,
+        3.7498834805246872
+      ]
+    },
+    "cpu": {
+      "runs": 2,
+      "screenshots": 2,
+      "windows": 240,
+      "mean_system_w": 4.6423052241585445,
+      "mean_duration_s": 25.398406480497215,
+      "gross_j_per_screenshot": 117.90715508971445,
+      "incremental_j_per_screenshot": 93.11674525682959,
+      "mean_loaded_idle_w": 0.9760616222880271,
+      "battery_temp_max_c": 37.8,
+      "run_mean_w_range": [
+        4.596501710111378,
+        4.689777452749569
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "job": 0,
+      "backend": "gpu16s",
+      "case_id": 0,
+      "duration_s": 14.826581820991123,
+      "windows": 120,
+      "power_samples": 30,
+      "mean_system_w": 3.4934053514099013,
+      "gross_j_per_screenshot": 51.79526027656715,
+      "loaded_idle_w": 0.877275620089151,
+      "incremental_j_per_screenshot": 38.78826151575463,
+      "incremental_mean_w": 2.61612973132075,
+      "battery_temp_min_c": 37.1,
+      "battery_temp_max_c": 37.1,
+      "thermal_sensor_ranges_c": {
+        "cpuss-0-usr": [
+          52.5,
+          61.7
+        ],
+        "gpuss-0-usr": [
+          59.0,
+          72.6
+        ]
+      }
+    },
+    {
+      "job": 1,
+      "backend": "cpu",
+      "case_id": 0,
+      "duration_s": 24.944025854987558,
+      "windows": 120,
+      "power_samples": 50,
+      "mean_system_w": 4.689777452749569,
+      "gross_j_per_screenshot": 116.98193003552294,
+      "loaded_idle_w": 1.024560489913777,
+      "incremental_j_per_screenshot": 91.42526668511496,
+      "incremental_mean_w": 3.6652169628357916,
+      "battery_temp_min_c": 37.3,
+      "battery_temp_max_c": 37.4,
+      "thermal_sensor_ranges_c": {
+        "cpuss-0-usr": [
+          67.5,
+          81.1
+        ],
+        "gpuss-0-usr": [
+          48.2,
+          59.4
+        ]
+      }
+    },
+    {
+      "job": 2,
+      "backend": "cpu",
+      "case_id": 1,
+      "duration_s": 25.852787106006872,
+      "windows": 120,
+      "power_samples": 52,
+      "mean_system_w": 4.596501710111378,
+      "gross_j_per_screenshot": 118.83238014390595,
+      "loaded_idle_w": 0.9292675569892322,
+      "incremental_j_per_screenshot": 94.80822382854421,
+      "incremental_mean_w": 3.6672341531221453,
+      "battery_temp_min_c": 37.6,
+      "battery_temp_max_c": 37.8,
+      "thermal_sensor_ranges_c": {
+        "cpuss-0-usr": [
+          65.6,
+          80.7
+        ],
+        "gpuss-0-usr": [
+          48.6,
+          60.2
+        ]
+      }
+    },
+    {
+      "job": 3,
+      "backend": "gpu16s",
+      "case_id": 1,
+      "duration_s": 14.803051630005939,
+      "windows": 120,
+      "power_samples": 29,
+      "mean_system_w": 3.7498834805246872,
+      "gross_j_per_screenshot": 55.50971876871331,
+      "loaded_idle_w": 0.9479302658082576,
+      "incremental_j_per_screenshot": 41.477458102308425,
+      "incremental_mean_w": 2.8019532147164297,
+      "battery_temp_min_c": 38.1,
+      "battery_temp_max_c": 38.1,
+      "thermal_sensor_ranges_c": {
+        "cpuss-0-usr": [
+          53.6,
+          64.1
+        ],
+        "gpuss-0-usr": [
+          58.7,
+          72.9
+        ]
+      }
+    }
+  ],
+  "gpu_vs_cpu": {
+    "mean_power_reduction": 0.2198827089487344,
+    "gross_energy_reduction": 0.5449598501310922,
+    "incremental_energy_reduction": 0.5690049120774223,
+    "speedup": 1.714392216326425
+  },
+  "telemetry": {
+    "total_samples": 305,
+    "valid_samples": 305,
+    "sample_interval_p50_s": 0.5002084299921989,
+    "sample_interval_max_s": 0.5459946540067904,
+    "voltage_mv_range": [
+      4180,
+      4359
+    ],
+    "battery_statuses": [
+      "Full"
+    ],
+    "usb_online_values": [
+      1
+    ]
+  },
+  "method": "System DC-rail estimate ISYS*VSYS with trapezoid integration, not chip-only, USB input or wall power. Two images/backend, GPU0-CPU0-CPU1-GPU1 order. Same actual OmniMatch /detect requests with 120 windows/image. Model warmup/loading and idle intervals excluded from active energy.",
+  "limitations": [
+    "On-board telemetry, not calibrated external power meter",
+    "Only two images per backend, dynamic clocks; not long-run thermal qualification",
+    "Idle subtraction approximates workload incremental system energy; not GPU/CPU die power",
+    "Known application localization failures remain; this measures running the existing workload"
+  ],
+  "sha256": {
+    "metadata.json": "47c607c6ad4f3b7e82357b551675edf417240dbbf22c7f8ecfcc41b0f184ddb3",
+    "events.jsonl": "d68bffc49cddc6297c77dd6e2d78889772c50112faea474b14334768c6e1468b",
+    "telemetry.jsonl": "a7f01fc5a5073fae7a79daa1c523510ba1688f9efdc6f8e6e7878c8cb8812461",
+    "workload_results.json": "691ad55d47daae167beeaea36b6557e1599c1f6c672e03db6c60b108161b4bcc"
+  }
+}

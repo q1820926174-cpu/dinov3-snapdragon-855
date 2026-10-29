@@ -1,0 +1,12 @@
+{
+  "Input": 1,
+  "Convolution": 40,
+  "Permute": 48,
+  "LayerNorm": 24,
+  "Split": 19,
+  "ConvolutionDepthWise": 18,
+  "GELU": 18,
+  "BinaryOp": 18,
+  "Reduction": 1,
+  "Flatten": 1
+}

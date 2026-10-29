@@ -1,0 +1,317 @@
+{
+  "overall": {
+    "n": 48,
+    "global_mean_cosine": 0.9999461770057678,
+    "global_p05_cosine": 0.9998923540115356,
+    "global_min_cosine": 0.9998600482940674,
+    "dense_mean_cosine": 0.9998993873596191,
+    "dense_p05_cosine": 0.999747633934021,
+    "same_image_patch_position_recall": 1.0,
+    "passes_global_gate": true
+  },
+  "games": {
+    "pvz": {
+      "n": 8,
+      "global_mean_cosine": 0.999964714050293,
+      "global_p05_cosine": 0.9999537467956543,
+      "global_min_cosine": 0.9999518394470215,
+      "dense_mean_cosine": 0.9999143481254578,
+      "dense_p05_cosine": 0.9998080134391785,
+      "same_image_patch_position_recall": 1.0,
+      "passes_global_gate": true
+    },
+    "hollow_knight": {
+      "n": 8,
+      "global_mean_cosine": 0.9999257922172546,
+      "global_p05_cosine": 0.9998990893363953,
+      "global_min_cosine": 0.9998923540115356,
+      "dense_mean_cosine": 0.9998782277107239,
+      "dense_p05_cosine": 0.9997283816337585,
+      "same_image_patch_position_recall": 1.0,
+      "passes_global_gate": true
+    },
+    "terraria": {
+      "n": 8,
+      "global_mean_cosine": 0.9999376535415649,
+      "global_p05_cosine": 0.9998691082000732,
+      "global_min_cosine": 0.9998600482940674,
+      "dense_mean_cosine": 0.9998934268951416,
+      "dense_p05_cosine": 0.9997135400772095,
+      "same_image_patch_position_recall": 1.0,
+      "passes_global_gate": true
+    },
+    "cuphead": {
+      "n": 8,
+      "global_mean_cosine": 0.9999217391014099,
+      "global_p05_cosine": 0.9998971223831177,
+      "global_min_cosine": 0.9998923540115356,
+      "dense_mean_cosine": 0.9998705387115479,
+      "dense_p05_cosine": 0.9996908903121948,
+      "same_image_patch_position_recall": 1.0,
+      "passes_global_gate": true
+    },
+    "clash_royale": {
+      "n": 8,
+      "global_mean_cosine": 0.9999574422836304,
+      "global_p05_cosine": 0.9999402761459351,
+      "global_min_cosine": 0.9999396800994873,
+      "dense_mean_cosine": 0.9999162554740906,
+      "dense_p05_cosine": 0.9998093247413635,
+      "same_image_patch_position_recall": 1.0,
+      "passes_global_gate": true
+    },
+    "genshin": {
+      "n": 8,
+      "global_mean_cosine": 0.9999696612358093,
+      "global_p05_cosine": 0.9999501705169678,
+      "global_min_cosine": 0.9999404549598694,
+      "dense_mean_cosine": 0.9999235272407532,
+      "dense_p05_cosine": 0.9998348951339722,
+      "same_image_patch_position_recall": 1.0,
+      "passes_global_gate": true
+    }
+  },
+  "per_sample": [
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/github/val/images/03141.jpg",
+      "global_cosine": 0.9999639987945557
+    },
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/test/id6mik_ms0020533.jpg",
+      "global_cosine": 0.9999772310256958
+    },
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/github/val/images/03611.jpg",
+      "global_cosine": 0.9999518394470215
+    },
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/github/val/images/00031.jpg",
+      "global_cosine": 0.9999579191207886
+    },
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/github/val/images/03761.jpg",
+      "global_cosine": 0.999962329864502
+    },
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/test/id6mik_ms0017998.jpg",
+      "global_cosine": 0.9999874830245972
+    },
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/github/val/images/02451.jpg",
+      "global_cosine": 0.9999572038650513
+    },
+    {
+      "game": "pvz",
+      "source": "datasets_raw/pvz/github/val/images/02851.jpg",
+      "global_cosine": 0.9999597072601318
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0008566.jpg",
+      "global_cosine": 0.9999208450317383
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0005291.jpg",
+      "global_cosine": 0.9999430775642395
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0002771.jpg",
+      "global_cosine": 0.9999449253082275
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0017887.jpg",
+      "global_cosine": 0.9999500513076782
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0029476.jpg",
+      "global_cosine": 0.9999286532402039
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0012596.jpg",
+      "global_cosine": 0.9999152421951294
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0021918.jpg",
+      "global_cosine": 0.9999115467071533
+    },
+    {
+      "game": "hollow_knight",
+      "source": "datasets_raw/hollow_knight/test/6jd9d7_ms0016375.jpg",
+      "global_cosine": 0.9998923540115356
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09562.png",
+      "global_cosine": 0.9999598264694214
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09062.png",
+      "global_cosine": 0.9999556541442871
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09500.png",
+      "global_cosine": 0.9998859763145447
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09437.png",
+      "global_cosine": 0.9999211430549622
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09078.png",
+      "global_cosine": 0.9998600482940674
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09750.png",
+      "global_cosine": 0.9999697804450989
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09828.png",
+      "global_cosine": 0.999970555305481
+    },
+    {
+      "game": "terraria",
+      "source": "datasets_raw/terraria/hf_row_09296.png",
+      "global_cosine": 0.9999781847000122
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0036505.jpg",
+      "global_cosine": 0.9999461770057678
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0035498.jpg",
+      "global_cosine": 0.9999198317527771
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0021651.jpg",
+      "global_cosine": 0.9998923540115356
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0051107.jpg",
+      "global_cosine": 0.999906063079834
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0009819.jpg",
+      "global_cosine": 0.9999443292617798
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0042547.jpg",
+      "global_cosine": 0.9999192953109741
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0012336.jpg",
+      "global_cosine": 0.9999213218688965
+    },
+    {
+      "game": "cuphead",
+      "source": "datasets_raw/cuphead/test/73z9f5_ms0045820.jpg",
+      "global_cosine": 0.9999245405197144
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/test/c8ly8i_ms0003732.jpg",
+      "global_cosine": 0.9999414682388306
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/test/c8ly8i_ms0010455.jpg",
+      "global_cosine": 0.9999617338180542
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/test/c8ly8i_ms0005355.jpg",
+      "global_cosine": 0.9999496340751648
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/test/c8ly8i_ms0009064.jpg",
+      "global_cosine": 0.9999396800994873
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/test/c8ly8i_ms0011475.jpg",
+      "global_cosine": 0.9999604225158691
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/test/c8ly8i_ms0011197.jpg",
+      "global_cosine": 0.9999668598175049
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/train/QVgBL21PmtI_ctx97.jpg",
+      "global_cosine": 0.9999743700027466
+    },
+    {
+      "game": "clash_royale",
+      "source": "datasets_raw/clash_royale/train/Mrr1jQYQb_Y_ctx0.jpg",
+      "global_cosine": 0.999965250492096
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05093.png",
+      "global_cosine": 0.9999744892120361
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05875.png",
+      "global_cosine": 0.9999793171882629
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05109.png",
+      "global_cosine": 0.9999725818634033
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05937.png",
+      "global_cosine": 0.9999719858169556
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05812.png",
+      "global_cosine": 0.9999682903289795
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05718.png",
+      "global_cosine": 0.9999815225601196
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05343.png",
+      "global_cosine": 0.9999686479568481
+    },
+    {
+      "game": "genshin",
+      "source": "datasets_raw/genshin/hf_row_05000.png",
+      "global_cosine": 0.9999404549598694
+    }
+  ],
+  "notice": "Feature preservation only. Patch-position consistency is not labeled object matching Recall/mAP."
+}

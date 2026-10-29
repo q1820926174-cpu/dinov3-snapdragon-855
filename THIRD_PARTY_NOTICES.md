@@ -1,0 +1,9 @@
+# Third-party materials
+
+- **ncnn**, Tencent contributors, BSD-3-Clause: https://github.com/Tencent/ncnn . `patches/ncnn-scv41.patch` is based on commit `9fc8106e6634a60f39945d63e5ed2dd0704ac9fc`. Original copyright and license apply to upstream patch context. The upstream license is included in `third_party/ncnn-LICENSE.txt`.
+- **DINOv3**, Meta / FAIR: https://github.com/facebookresearch/dinov3 and the official Hugging Face model page. No model weights or official source tree are included. Obtain weights and comply with the model's applicable license/access conditions independently. This project's MIT license does not grant rights to the model weights or derived weight files.
+- **OmniMatch CV**, https://github.com/drtiwari/OmniMatch_CV , measured commit `bc410f1a410abc7d983278ddeb53b44850276b5d`. Its README declares MIT. Its source is fetched by the user rather than vendored; our adapter retains the original pipeline and API, replacing only its feature provider and local configuration.
+- **Game screenshots / annotations**: public sample metadata comes from https://github.com/pan0624/Yolov8-target-detection-and-simulation-click at `a6e1d91bc4cb632351f1c35a8e104156cbc3de13` and other sources identified by the acquisition scripts. No game image, video or crop is included. Availability on a public repository does not grant blanket rights to commercial game artwork.
+- **Qualcomm SNPE / SDK / firmware and Mesa driver binaries** are not distributed. Users must obtain and configure their own compatible platform dependencies.
+
+See `results/` for measured outputs, not reusable training data. This repository's license covers its original code and documentation only, subject to the notices above.

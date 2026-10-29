@@ -1,0 +1,26 @@
+{"event": "worker_start", "time_s": 156948.934614035, "order": [["gpu16s", 0], ["cpu", 0], ["cpu", 1], ["gpu16s", 1]]}
+{"event": "idle_before_start", "time_s": 156949.786305445, "job": 0, "backend": "gpu16s", "case_id": 0}
+{"event": "idle_before_end", "time_s": 156957.786470429, "job": 0}
+{"event": "request_start", "time_s": 156957.786935691, "job": 0, "backend": "gpu16s", "case_id": 0}
+{"event": "request_end", "time_s": 156972.613551002, "job": 0}
+{"event": "idle_after_start", "time_s": 156972.613670013, "job": 0}
+{"event": "idle_after_end", "time_s": 156980.613814232, "job": 0}
+{"event": "idle_before_start", "time_s": 156981.386108361, "job": 1, "backend": "cpu", "case_id": 0}
+{"event": "idle_before_end", "time_s": 156989.386335446, "job": 1}
+{"event": "request_start", "time_s": 156989.387300136, "job": 1, "backend": "cpu", "case_id": 0}
+{"event": "request_end", "time_s": 157014.33142771, "job": 1}
+{"event": "idle_after_start", "time_s": 157014.331715106, "job": 1}
+{"event": "idle_after_end", "time_s": 157022.331882225, "job": 1}
+{"event": "idle_before_start", "time_s": 157022.989616868, "job": 2, "backend": "cpu", "case_id": 1}
+{"event": "idle_before_end", "time_s": 157030.98984354, "job": 2}
+{"event": "request_start", "time_s": 157030.990847084, "job": 2, "backend": "cpu", "case_id": 1}
+{"event": "request_end", "time_s": 157056.843724086, "job": 2}
+{"event": "idle_after_start", "time_s": 157056.843992159, "job": 2}
+{"event": "idle_after_end", "time_s": 157064.844161873, "job": 2}
+{"event": "idle_before_start", "time_s": 157065.684393036, "job": 3, "backend": "gpu16s", "case_id": 1}
+{"event": "idle_before_end", "time_s": 157073.684658667, "job": 3}
+{"event": "request_start", "time_s": 157073.685456064, "job": 3, "backend": "gpu16s", "case_id": 1}
+{"event": "request_end", "time_s": 157088.48858931, "job": 3}
+{"event": "idle_after_start", "time_s": 157088.488861498, "job": 3}
+{"event": "idle_after_end", "time_s": 157096.489036686, "job": 3}
+{"event": "worker_end", "time_s": 157096.558968531}
